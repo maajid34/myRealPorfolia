@@ -56,7 +56,7 @@ export default function PortfolioHero() {
 
   {/* TikTok */}
   <a
-    href="https://www.tiktok.com/@heegantechnology"
+    href="http://tiktok.com/@hilaacconsultant"
     aria-label="TikTok"
     target="_blank"
     rel="noopener noreferrer"
@@ -67,7 +67,7 @@ export default function PortfolioHero() {
 
   {/* LinkedIn */}
   <a
-    href="https://www.linkedin.com/in/your-profile"
+    href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
     aria-label="LinkedIn"
     target="_blank"
     rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export default function PortfolioHero() {
 
   {/* GitHub */}
   <a
-    href="https://github.com/your-username"
+    href="https://github.com/maajid34"
     aria-label="GitHub"
     target="_blank"
     rel="noopener noreferrer"
