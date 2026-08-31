@@ -1,44 +1,62 @@
-// About.jsx
+import { competencies, profile } from "../data/profile";
+
 export default function About() {
   return (
-    <section className="mt-[200px] rounded-2xl border border-white/10 bg-[#0f1622] p-6 ">
-      <h3 className="mb-6 text-3xl font-bold text-white">About Me</h3>
-
-      <div className="md:flex md:items-center md:space-x-6">
-        {/* Profile Image */}
-        <div className="flex-shrink-0 mb-6 md:mb-0">
+    <section className="min-h-screen bg-[#0b1118] px-4 py-12 text-slate-100 md:px-6 md:py-16">
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.8fr_1.2fr]">
+        <aside className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
           <img
-            src="https://via.placeholder.com/250x250"
-            alt="Profile"
-            className="w-40 h-40 rounded-xl object-cover border border-white/10 shadow"
+            src={profile.photo}
+            alt={profile.fullName}
+            className="aspect-[4/5] w-full rounded-lg object-cover object-top"
           />
-        </div>
+          <div className="mt-5 space-y-3 text-sm text-slate-300">
+            <a className="block break-words hover:text-emerald-300" href={`mailto:${profile.email}`}>
+              {profile.email}
+            </a>
+            <a
+              className="block hover:text-emerald-300"
+              href={`tel:${profile.phone.replaceAll(" ", "")}`}
+            >
+              {profile.phone}
+            </a>
+            <p>{profile.location}</p>
+            <p>Nationality: {profile.nationality}</p>
+          </div>
+        </aside>
 
-        {/* Text Content */}
-        <div>
-          <p className="text-slate-300 leading-relaxed">
-            I am a <span className="font-semibold text-white">Full-Stack Web Developer</span> 
-            with experience in building modern, responsive, and scalable web applications. 
-            Skilled in <span className="text-emerald-400">React, Node.js, PHP, and MongoDB</span>, 
-            I enjoy solving problems and delivering clean, user-friendly designs.
+        <main className="break-words rounded-lg border border-white/10 bg-[#0f1622] p-6 md:p-8">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-400">
+            Professional Profile
+          </p>
+          <h1 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+            {profile.fullName}
+          </h1>
+          <p className="mt-2 text-lg text-slate-300">{profile.title}</p>
+
+          <p className="mt-6 leading-relaxed text-slate-300">{profile.bio}</p>
+          <p className="mt-4 leading-relaxed text-slate-400">
+            Formal institutional experience includes IT Specialist
+            responsibilities with the Ministry of Energy & Water Resources of
+            Jubaland State, Head of Communications responsibilities with the
+            Office of the First Deputy President of Jubaland State, and ICT
+            Assistant responsibilities with HAARAN. In parallel, I deliver
+            independent ICT consulting and web-development assignments for
+            government institutions, private companies, and local NGOs.
           </p>
 
-          <p className="mt-4 text-slate-400">
-            Over the past few years, I have worked on projects ranging from government portals 
-            and e-commerce platforms to energy and education systems. My goal is to create 
-            software that makes a real impact in people’s daily lives.
-          </p>
-
-          {/* Button */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block rounded-lg bg-emerald-500 px-5 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400 transition"
-          >
-            Download Resume
-          </a>
-        </div>
+          <h2 className="mt-8 text-xl font-semibold text-white">Core Competencies</h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {competencies.map((item) => (
+              <p
+                key={item}
+                className="rounded-lg border border-white/10 bg-[#111b2a] px-4 py-3 text-sm text-slate-300"
+              >
+                {item}
+              </p>
+            ))}
+          </div>
+        </main>
       </div>
     </section>
   );

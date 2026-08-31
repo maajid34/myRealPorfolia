@@ -1,294 +1,208 @@
-import Projects from "../component/projects";
+import {
+  competencies,
+  education,
+  experience,
+  languages,
+  profile,
+  references,
+  technicalSkills,
+} from "../data/profile";
 
-export default function ResumeComponent() {
+function ExternalLink({ href, children }) {
   return (
-    <>
-    
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-emerald-500/30 px-3 py-2 text-center text-sm font-medium text-emerald-300 transition hover:border-emerald-400 hover:bg-emerald-500/10"
+    >
+      {children}
+      <i className="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+    </a>
+  );
+}
+
+function InfoList({ title, items }) {
+  return (
+    <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+      <h2 className="mb-3 text-lg font-semibold">{title}</h2>
+      <ul className="space-y-2 text-sm text-slate-300">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2">
+            <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-emerald-400" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export default function ResumeComponent({ compact = false }) {
+  const visibleExperience = compact ? experience.slice(0, 3) : experience;
+
+  return (
     <section className="min-h-screen w-full bg-[#0b1118] text-slate-100">
-      {/* Accent bar matching header */}
       <div className="h-1 w-full bg-emerald-500" />
 
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-6 lg:px-8">
-        {/* Title */}
         <header className="mb-8 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl font-extrabold tracking-tight md:text-3xl">
-            Resume
-          </h1>
-          <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-400 ring-1 ring-emerald-500/30">
-            My Resume
-          </span>
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-400">
+              CV
+            </p>
+            <h1 className="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl">
+              Resume
+            </h1>
+          </div>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-400 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/20"
+          >
+            Download PDF
+          </a>
         </header>
 
-        {/* Grid Layout */}
         <div className="grid gap-6 md:grid-cols-12">
-          {/* Left Column */}
           <aside className="md:col-span-4 lg:col-span-3">
-            <div className="rounded-2xl border border-white/10 bg-[#0f1622] p-6 shadow-xl">
-              <div className="mx-auto mb-6 h-36 w-36 overflow-hidden rounded-full bg-emerald-500/20 flex items-center justify-center text-4xl font-bold text-emerald-400">
-                <img src="https://engmaajid.vercel.app/assets/img/maajid/pro.jpg" alt="" />
-              </div>
-              <h2 className="text-center text-lg font-semibold">Eng Abdi Maajid Hajji</h2>
-              <p className="mt-1 text-center text-xs text-slate-400">Computer Science Engineer</p>
+            <div className="rounded-lg border border-white/10 bg-[#0f1622] p-6 shadow-xl">
+              <img
+                src={profile.photo}
+                alt={profile.fullName}
+                className="mx-auto aspect-square w-40 rounded-2xl border border-emerald-400/30 object-cover object-top shadow-[0_25px_70px_-35px_rgba(16,185,129,0.9)]"
+              />
+              <h2 className="mt-6 text-center text-lg font-semibold">
+                {profile.fullName}
+              </h2>
+              <p className="mt-1 text-center text-xs text-slate-400">
+                {profile.title}
+              </p>
               <div className="mt-6 space-y-4 text-sm">
-                <p className="text-slate-300">maajid23456@gmail.com</p>
-                <p className="text-slate-300">+252 61 9829928</p>
-                <p className="text-slate-300">Mogadishu, Somalia</p>
+                <a className="block break-words text-slate-300 hover:text-emerald-300" href={`mailto:${profile.email}`}>
+                  {profile.email}
+                </a>
+                <a
+                  className="block text-slate-300 hover:text-emerald-300"
+                  href={`tel:${profile.phone.replaceAll(" ", "")}`}
+                >
+                  {profile.phone}
+                </a>
+                <p className="text-slate-300">{profile.location}</p>
+                <p className="text-slate-300">Nationality: {profile.nationality}</p>
               </div>
             </div>
           </aside>
 
-          {/* Main Column */}
-          <main className="md:col-span-8 lg:col-span-6 space-y-6">
-            <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-              <h3 className="mb-3 text-2xl font-bold">Profile</h3>
-              <p className="leading-relaxed text-slate-300">
-               I am a Computer Engineer and hold a Bachelor’s Degree in Computer Science. I have strong technical knowledge in software development, networking, and system management. With hands-on experience in web development, IT support, and problem-solving, I am passionate about designing efficient digital solutions and continuously expanding my skills to stay updated with modern technologies
-              </p>
+          <main className="space-y-6 md:col-span-8 lg:col-span-6">
+            <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+              <h2 className="mb-3 text-2xl font-bold">Professional Profile</h2>
+              <p className="leading-relaxed text-slate-300">{profile.bio}</p>
+              <div className="mt-5 space-y-3">
+                {profile.highlights.map((item) => (
+                  <p key={item} className="border-l border-emerald-500/60 pl-3 text-sm text-slate-300">
+                    {item}
+                  </p>
+                ))}
+              </div>
             </section>
 
-            <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-              <h3 className="mb-3 text-3xl font-bold">Education</h3>
-              <ul className="space-y-3 text-sm">
-                 <li>
-                  <p className="font-medium">Primary School</p>
-                  <p className="text-slate-400">208-2016</p>
-                </li>
-                 <li>
-                  <p className="font-medium">Secondary School</p>
-                  <p className="text-slate-400">2018-2022</p>
-                </li>
-                 <li>
-                  <p className="font-medium">Graphic Designer</p>
-                  <p className="text-slate-400">2022-2023</p>
-                </li>
-                <li>
-                  <p className="font-medium">Fullstack Webdeveloper</p>
-                  <p className="text-slate-400">2023-20224</p>
-                </li>
-              
-                 <li>
-                  <p className="font-medium">Computer Science</p>
-                  <p className="text-slate-400">2024 – 2025</p>
-                </li>
-              </ul>
+            <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+              <h2 className="mb-3 text-2xl font-bold">Education & Certificates</h2>
+              <div className="space-y-4">
+                {education.map((item) => (
+                  <article key={`${item.title}-${item.period}`}>
+                    <p className="font-medium">{item.title}</p>
+                    <p className="text-sm text-slate-400">{item.institution}</p>
+                    <p className="text-sm text-emerald-300">{item.period}</p>
+                  </article>
+                ))}
+              </div>
             </section>
 
-            <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-              <h3 className="mb-3 text-3xl font-bold">Work Experience</h3>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <p className="font-medium">Customer Care Director and product expert in Heegan Technology</p>
-                  
-                  <p className="text-slate-400">2025 – 2026</p>
-                  <p className="text-slate-300">Handled daily operations and supported project delivery with cross‑team collaboration.</p>
-                 
-                  <div className="flex space-x-4">
-
-    
-<a href="https://www.facebook.com/share/v/16f6JY7y61/" className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400"><i className="fa-brands fa-facebook-f text-white"></i></a>
-<a href="https://www.tiktok.com/@heegantechnology?_t=ZM-90C6Q3PdPoJ&_r=1" className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400">  <i className="fa-brands fa-tiktok text-white"></i></a>
-                  </div>
-             
- 
-
-                </li>
-                <div className="w-full h-1 bg-white" />
-                <li>
-                  <p className="font-medium">School Teacher on Manbac Primary and secondary School</p>
-                  
-                  <p className="text-slate-400">2024 – 2025</p>
-                  <p className="text-slate-300">Handled daily operations and supported project delivery with cross‑team collaboration.</p>
-                 
-                  <div className="">
-
-    
-<a href="https://www.facebook.com/photo/?fbid=355515780779213&set=a.106283065702487" className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400"><i className="fa-brands fa-facebook-f text-white"></i></a>
-
-                  </div>
-             
- 
-
-                </li>
-                 <div className="w-full h-1 bg-white" />
-                
-              </ul>
+            <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+              <h2 className="mb-3 text-2xl font-bold">Professional Experience</h2>
+              <div className="space-y-6">
+                {visibleExperience.map((item) => (
+                  <article key={`${item.role}-${item.company}`} className="break-words border-b border-white/10 pb-6 last:border-0 last:pb-0">
+                    <p className="font-medium text-white">{item.role}</p>
+                    <p className="text-sm text-slate-400">
+                      {item.company} | {item.period}
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                      {item.points.map((point) => (
+                        <li key={point} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-emerald-400" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {item.links && (
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        {item.links.map((link) => (
+                          <ExternalLink key={link.url} href={link.url}>
+                            {link.label}
+                          </ExternalLink>
+                        ))}
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
             </section>
-           <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-  <h3 className="mb-6 text-3xl font-bold text-white">References</h3>
 
-  <div className="grid md:grid-cols-2 gap-6">
-    {/* Reference 1 */}
-    <div className="rounded-xl border border-white/10 bg-[#1a2232] p-5 shadow hover:shadow-lg transition">
-      <h4 className="text-xl font-semibold text-white">CEO Of The Company</h4>
-      <p className="text-slate-400">Heegan Technology (2025 – 2026)</p>
-      
-
-      {/* Contact Info */}
-      <div className="mt-4 text-sm space-y-1">
-        <p className="text-white font-medium">Name: Eng Shafie</p>
-        <p>
-          <a href="tel:+252 61 5801525" className="text-emerald-400 hover:underline">
-            Phone: +252 61 5801525
-          </a>
-        </p>
-        <p>
-          <a href="mailto:heegantechnology9@gmail.com" className="text-emerald-400 hover:underline">
-            Email: heegantechnology9@gmail.com
-          </a>
-        </p>
-      </div>
-
-      {/* Social Links */}
-      <div className="flex space-x-3 mt-4">
-        <a
-          href="https://www.facebook.com/share/v/16f6JY7y61/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 hover:bg-emerald-400"
-        >
-          <i className="fa-brands fa-facebook-f text-white"></i>
-        </a>
-        <a
-          href="https://www.tiktok.com/@heegantechnology?_t=ZM-90C6Q3PdPoJ&_r=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 hover:bg-emerald-400"
-        >
-          <i className="fa-brands fa-tiktok text-white"></i>
-        </a>
-      </div>
-    </div>
-
-    {/* Reference 2 */}
-    <div className="rounded-xl border border-white/10 bg-[#1a2232] p-5 shadow hover:shadow-lg transition">
-      <h4 className="text-xl font-semibold text-white">Head Of School(Principal)</h4>
-      <p className="text-slate-400">Manbac Primary & Secondary (2024 – 2025)</p>
-    
-
-      {/* Contact Info */}
-      <div className="mt-4 text-sm space-y-1">
-        <p className="text-white font-medium">Name: Ustaad Nageeye</p>
-        <p>
-          <a href="tel: +252 61 5214289" className="text-emerald-400 hover:underline">
-            Phone: +252 61 5214289
-          </a>
-        </p>
-        <p>
-          <a href="mailto:almanbacschool@gmail.com" className="text-emerald-400 hover:underline">
-            Email: almanbacschool@gmail.com
-          </a>
-        </p>
-      </div>
-
-      {/* Social Links */}
-      <div className="flex space-x-3 mt-4">
-        <a
-          href="https://www.facebook.com/photo/?fbid=355515780779213&set=a.106283065702487"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 hover:bg-emerald-400"
-        >
-          <i className="fa-brands fa-facebook-f text-white"></i>
-        </a>
-      </div>
-    </div>
-    {/* Reference 3 */}
-    <div className="rounded-xl border border-white/10 bg-[#1a2232] p-5 shadow hover:shadow-lg transition">
-      <h4 className="text-xl font-semibold text-white">Energy Director </h4>
-      <p className="text-slate-400">ministry water and Energy Resource Of Jubaland</p>
-    
-
-      {/* Contact Info */}
-      <div className="mt-4 text-sm space-y-1">
-        <p className="text-white font-medium">Name:Abdi Salan Hajji</p>
-        <p>
-          <a href="tel: +252 61 5214289" className="text-emerald-400 hover:underline">
-            Phone: +252 61 5726669
-          </a>
-        </p>
-        <p>
-          <a href="mailto:moewr2023@gmail.com" className="text-emerald-400 hover:underline">
-            Email: moewr2023@gmail.com
-          </a>
-        </p>
-      </div>
-
-      {/* Social Links */}
-      <div className="flex space-x-3 mt-4">
-        <a
-          href="https://www.facebook.com/photo/?fbid=355515780779213&set=a.106283065702487"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 hover:bg-emerald-400"
-        >
-          <i className="fa-brands fa-facebook-f text-white"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
+            <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+              <h2 className="mb-6 text-2xl font-bold text-white">References</h2>
+              <div className="grid gap-6 md:grid-cols-2">
+                {references.map((reference) => (
+                  <article
+                    key={reference.email}
+                    className="break-words rounded-lg border border-white/10 bg-[#1a2232] p-5 shadow transition hover:shadow-lg"
+                  >
+                    <h3 className="text-lg font-semibold text-white">
+                      {reference.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-emerald-300">{reference.role}</p>
+                    <p className="mt-1 text-sm text-slate-400">
+                      {reference.organization}
+                    </p>
+                    <div className="mt-4 space-y-1 text-sm">
+                      <a href={`mailto:${reference.email}`} className="block break-words text-emerald-400 hover:underline">
+                        {reference.email}
+                      </a>
+                      <a
+                        href={`tel:${reference.phone.replaceAll(" ", "")}`}
+                        className="block text-emerald-400 hover:underline"
+                      >
+                        {reference.phone}
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
           </main>
 
-          {/* Right Column */}
-          <aside className="md:col-span-12 lg:col-span-3 space-y-6">
-            <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-              <h3 className="mb-3 text-lg font-semibold">Languages</h3>
-              <ul className="space-y-2 text-sm text-slate-300">
-                <li>Somali – Native</li>
-                <li>English – B2</li>
-                <li>Arabic – Basic</li>
-              </ul>
-            </section>
+          <aside className="space-y-6 md:col-span-12 lg:col-span-3">
+            <InfoList title="Core Competencies" items={competencies} />
+            <InfoList title="Technical Skills" items={technicalSkills} />
+            <InfoList title="Languages" items={languages} />
 
-            <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-              <h3 className="mb-3 text-lg font-semibold">Soft Skills</h3>
-              <ul className="space-y-2 text-sm text-slate-300">
-                <li>Communication</li>
-                <li>Problem Solving</li>
-                <li>Attention to Detail</li>
-                <li>Teamwork</li>
-                <li>Adaptability</li>
-              </ul>
-            </section>
-
-            <section className="rounded-2xl border border-white/10 bg-[#0f1622] p-6">
-              <h3 className="mb-3 text-lg font-semibold">Technical Skills</h3>
-              <ul className="list-disc pl-5 space-y-2 text-sm text-slate-300">
-                <li>HTML, CSS (Tailwind)</li>
-                <li>JavaScript, React</li>
-                <li>Window Installation</li>
-                <li>Computer Unlock</li>
-                <li>Web Design</li>
-                <li>Backend Developer</li>
-                <li>Frontend Developer</li>
-                <li>Graphic Designer</li>
-                <li>Git & GitHub</li>
-              </ul>
-            </section>
-
-            <section className="rounded-2xl flex space-x-4 border border-white/10 bg-[#0f1622] p-6">
-            <div> 
-                <h3 className="mb-3 text-lg font-semibold">GitHub</h3>
-              <a href="https://github.com/maajid34" className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400">
-                View Profile
-              </a>
-
-            </div>
-            <div> 
-                <h3 className="mb-3 text-lg font-semibold">Linkedin</h3>
-              <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400">
-                View Profile
-              </a>
-
-            </div>
-             
+            <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+              <h2 className="mb-3 text-lg font-semibold">Profiles</h2>
+              <div className="flex flex-wrap gap-3">
+                {profile.socialLinks.map((link) => (
+                  <ExternalLink key={link.label} href={link.url}>
+                    <i className={link.icon}></i>
+                    {link.label}
+                  </ExternalLink>
+                ))}
+              </div>
             </section>
           </aside>
         </div>
       </div>
     </section>
-<Projects/>
-    </>
   );
 }
