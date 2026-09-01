@@ -106,7 +106,7 @@ export const education = [
 export const experience = [
   {
     role: "IT Specialist",
-    company: "Ministry of Energy & Water Resources, Jubaland State",
+    company: "Ministry of Fisheries and Blue Economy, Jubaland State",
     period: "15 Apr 2026 - 5 Aug 2026",
     points: [
       "Managed the Ministry's ICT environment across software development, hardware support, website administration, hosting, and digital-system implementation.",
