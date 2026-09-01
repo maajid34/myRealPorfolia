@@ -152,7 +152,7 @@ export default function ResumeComponent({ compact = false }) {
               </div>
             </section>
 
-            <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
+            {/* <section className="rounded-lg border border-white/10 bg-[#0f1622] p-6">
               <h2 className="mb-6 text-2xl font-bold text-white">References</h2>
               <div className="grid gap-6 md:grid-cols-2">
                 {references.map((reference) => (
@@ -181,7 +181,7 @@ export default function ResumeComponent({ compact = false }) {
                   </article>
                 ))}
               </div>
-            </section>
+            </section> */}
           </main>
 
           <aside className="space-y-6 md:col-span-12 lg:col-span-3">
