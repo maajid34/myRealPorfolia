@@ -55,14 +55,14 @@ export default function ResumeComponent({ compact = false }) {
               Resume
             </h1>
           </div>
-          <a
+          {/* <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-400 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/20"
           >
             Download PDF
-          </a>
+          </a> */}
         </header>
 
         <div className="grid gap-6 md:grid-cols-12">

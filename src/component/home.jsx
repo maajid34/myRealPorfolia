@@ -43,7 +43,7 @@ export default function PortfolioHero() {
                 <i className="fa-brands fa-whatsapp"></i>
                 Let's Talk on WhatsApp
               </a>
-              <a
+              {/* <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function PortfolioHero() {
               >
                 <i className="fa-solid fa-file-arrow-down"></i>
                 Download CV
-              </a>
+              </a> */}
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
