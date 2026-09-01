@@ -243,13 +243,13 @@ export const projects = [
 
 export const systems = [
   {
-    title: "Jubaland Project Portal System",
+    title: "Project Portal System",
     description:
       "Developing a full-stack platform for project registration, monitoring, organization management, approvals, reporting, and role-based access.",
     status: "Nearing completion",
   },
   {
-    title: "Kismayo Port Management System",
+    title: "Port Management System",
     description:
       "Developing an integrated system for vessel operations, cargo handling, gate passes, access control, staff and visitor management, and operational reporting.",
     status: "Nearing completion",
