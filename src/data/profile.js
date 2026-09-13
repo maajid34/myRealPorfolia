@@ -307,6 +307,14 @@ export const projects = [
     url: "https://aayareeb.com/",
     image:ayareeb,
   },
+  {
+    title: "Ministry of Fishery & Blue Economy - Jubaland State",
+    role: "Independent Web Development Consultant",
+    description:
+      "Designed and developed the ministry website to improve institutional visibility, public communication, and access to sector information.",
+      image:fishiries,
+    url: "https://mofisheriesbe-frontend.vercel.app/",
+  },
   
 ];
 
@@ -323,14 +331,7 @@ export const systems = [
       "Developing an integrated system for vessel operations, cargo handling, gate passes, access control, staff and visitor management, and operational reporting.",
     status: "Nearing completion",
   },
-  {
-    title: "Ministry of Fishery & Blue Economy - Jubaland State",
-    role: "Independent Web Development Consultant",
-    description:
-      "Designed and developed the ministry website to improve institutional visibility, public communication, and access to sector information.",
-      image:fishiries,
-    url: "https://mofisheriesbe-frontend.vercel.app/",
-  },
+  
 ];
 
 export const references = [
