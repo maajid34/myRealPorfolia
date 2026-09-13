@@ -6,7 +6,7 @@ import profileImage from "../assets/profilw3.jpeg";
 import sundusImage from "../assets/sundus.jpg";
 
 export const profile = {
-  displayName: "Eng Maajid",
+  displayName: "Eng Abdimajid",
   fullName: "Abdimajid Haji Adan Nor",
   title: "Software & Hardware Engineer | ICT Professional",
   shortTitle: "Full-Stack Developer & ICT Professional",
@@ -103,51 +103,111 @@ export const education = [
   },
 ];
 
+// export const experience = [
+//   {
+//     role: "IT Specialist",
+//     company: "Ministry of Fisheries and Blue Economy, Jubaland State",
+//     period: "15 Apr 2026 - 5 Aug 2026",
+//     points: [
+//       "Managed the Ministry's ICT environment across software development, hardware support, website administration, hosting, and digital-system implementation.",
+//       "Designed, developed, and maintained the official website with frontend, backend, database integration, domain configuration, hosting deployment, and ongoing technical administration.",
+//       "Developed the Energy Mapping Assessment dashboard and Water Resources Assessment dashboard for visual maps, charts, indicators, and decision-support reporting.",
+//       "Installed and configured CCTV surveillance with eight security cameras and two monitoring screens, including testing and operational setup.",
+//       "Installed and configured the biometric fingerprint attendance system, enrolled staff users, and supported digital attendance tracking.",
+//       "Provided hardware and software ICT support for desktops, laptops, printers, projectors, presentation screens, CCTV equipment, peripherals, operating systems, and office applications.",
+//     ],
+//     links: [
+//       { label: "Website", url: "https://moewr-jubalandstate.so/" },
+//       { label: "Energy Dashboard", url: "https://moewr-jss.shinyapps.io/Moewr_jss/" },
+//       { label: "Water Dashboard", url: "https://fy4z9s-mayow-cabdiqadir.shinyapps.io/jls_ws/" },
+//     ],
+//   },
+//   {
+//     role: "Head of Communications",
+//     company: "Office of the First Deputy President - Jubaland State of Somalia",
+//     period: "5 Feb 2026 - 10 Apr 2026",
+//     points: [
+//       "Led and supported communications and media activities for official meetings, events, field activities, and public engagements.",
+//       "Provided photography, video coverage, meeting footage, short videos, and visual materials for official communication and broadcast use.",
+//       "Produced digital designs, graphics, presentation materials, and communication assets for institutional visibility and media dissemination.",
+//       "Supported recording, editing, camera setup, projectors, presentation screens, and audio-visual equipment for official sessions.",
+//       "Provided ICT support for computers, printers, cameras, CCTV equipment, projectors, presentation screens, software installation, and day-to-day user support.",
+//     ],
+//   },
+//   {
+//     role: "ICT Assistant",
+//     company: "Horn of Africa Aid and Rehabilitation Action Network (HAARAN)",
+//     period: "Sep 2025 - Dec 2025",
+//     points: [
+//       "Provided organization-wide hardware and software ICT assistance, including setup, maintenance, and troubleshooting.",
+//       "Supported printing, connectivity, device configuration, user setup, peripheral integration, and ICT equipment preparation for meetings and daily programme operations.",
+//       "Conducted routine configuration, testing, and preventive maintenance to improve reliability, availability, and staff productivity.",
+//       "Developed and supported the organization's website to strengthen programme communication and access to information.",
+//     ],
+//     links: [{ label: "Website", url: "https://www.haarankensom.org/" }],
+//   },
+// ];
 export const experience = [
   {
     role: "IT Specialist",
-    company: "Ministry of Fisheries and Blue Economy, Jubaland State",
+    company: "Aqoonmaal Construction & Transportation Company",
     period: "15 Apr 2026 - 5 Aug 2026",
     points: [
-      "Managed the Ministry's ICT environment across software development, hardware support, website administration, hosting, and digital-system implementation.",
-      "Designed, developed, and maintained the official website with frontend, backend, database integration, domain configuration, hosting deployment, and ongoing technical administration.",
-      "Developed the Energy Mapping Assessment dashboard and Water Resources Assessment dashboard for visual maps, charts, indicators, and decision-support reporting.",
-      "Installed and configured CCTV surveillance with eight security cameras and two monitoring screens, including testing and operational setup.",
-      "Installed and configured the biometric fingerprint attendance system, enrolled staff users, and supported digital attendance tracking.",
-      "Provided hardware and software ICT support for desktops, laptops, printers, projectors, presentation screens, CCTV equipment, peripherals, operating systems, and office applications.",
+      "Managed and supported the company's day-to-day ICT environment, providing hardware, software, and end-user technical support for office operations.",
+      "Installed, configured, maintained, and troubleshot staff desktops, laptops, printers, projectors, presentation screens, CCTV equipment, peripherals, and other office ICT devices.",
+      "Performed operating-system and business-application installation, software updates, user and device configuration, connectivity troubleshooting, peripheral integration, and preventive maintenance.",
+      "Supported staff in resolving hardware, software, printing, connectivity, and device-configuration issues to maintain reliable and efficient ICT operations.",
+      "Supported the company's website and other digital operations as part of broader ICT responsibilities.",
     ],
     links: [
-      { label: "Website", url: "https://moewr-jubalandstate.so/" },
-      { label: "Energy Dashboard", url: "https://moewr-jss.shinyapps.io/Moewr_jss/" },
-      { label: "Water Dashboard", url: "https://fy4z9s-mayow-cabdiqadir.shinyapps.io/jls_ws/" },
+      {
+        label: "Company Website",
+        url: "https://aqoonmaal-company.vercel.app/",
+      },
     ],
   },
+
   {
-    role: "Head of Communications",
-    company: "Office of the First Deputy President - Jubaland State of Somalia",
-    period: "5 Feb 2026 - 10 Apr 2026",
+    role: "IT Officer",
+    company: "GreenVolt Energy Solutions Company",
+    period: "20 Feb 2026 - 10 Apr 2026",
     points: [
-      "Led and supported communications and media activities for official meetings, events, field activities, and public engagements.",
-      "Provided photography, video coverage, meeting footage, short videos, and visual materials for official communication and broadcast use.",
-      "Produced digital designs, graphics, presentation materials, and communication assets for institutional visibility and media dissemination.",
-      "Supported recording, editing, camera setup, projectors, presentation screens, and audio-visual equipment for official sessions.",
-      "Provided ICT support for computers, printers, cameras, CCTV equipment, projectors, presentation screens, software installation, and day-to-day user support.",
+      "Provided day-to-day hardware and software IT support for company staff and office operations.",
+      "Installed, configured, maintained, and troubleshot desktops, laptops, printers, projectors, presentation screens, CCTV equipment, peripherals, and other office technology.",
+      "Handled operating-system configuration, software installation and updates, user setup, device configuration, connectivity troubleshooting, and peripheral integration.",
+      "Prepared and supported ICT and presentation equipment for meetings, presentations, and other company activities.",
+      "Performed routine preventive maintenance and technical troubleshooting to improve the reliability and availability of company ICT equipment.",
+      "Supported the company's website and digital presence while providing responsive technical assistance to staff and management.",
+    ],
+    links: [
+      {
+        label: "Company Website",
+        url: "https://greenvolt-energy.com/",
+      },
     ],
   },
+
   {
     role: "ICT Assistant",
-    company: "Horn of Africa Aid and Rehabilitation Action Network (HAARAN)",
+    company:
+      "Horn of Africa Aid and Rehabilitation Action Network (HAARAN)",
     period: "Sep 2025 - Dec 2025",
     points: [
-      "Provided organization-wide hardware and software ICT assistance, including setup, maintenance, and troubleshooting.",
-      "Supported printing, connectivity, device configuration, user setup, peripheral integration, and ICT equipment preparation for meetings and daily programme operations.",
-      "Conducted routine configuration, testing, and preventive maintenance to improve reliability, availability, and staff productivity.",
-      "Developed and supported the organization's website to strengthen programme communication and access to information.",
+      "Provided organization-wide hardware and software ICT support, including setup, configuration, maintenance, and troubleshooting of office technology.",
+      "Supported staff desktops, laptops, printers, projectors, presentation screens, CCTV equipment, peripherals, operating systems, and office applications.",
+      "Resolved hardware, software, printing, connectivity, user-configuration, and device-integration issues affecting daily programme and office operations.",
+      "Installed and configured software applications, user accounts, peripherals, and ICT equipment required for meetings, presentations, and organizational activities.",
+      "Conducted routine testing and preventive maintenance to improve ICT equipment reliability, availability, and staff productivity.",
+      "Developed and supported the organization's website to strengthen programme communication, institutional visibility, and public access to organizational information.",
     ],
-    links: [{ label: "Website", url: "https://www.haarankensom.org/" }],
+    links: [
+      {
+        label: "Organization Website",
+        url: "https://www.haarankensom.org/",
+      },
+    ],
   },
 ];
-
 export const projects = [
   {
     title: "Ministry of Planning, Investment and International Cooperation - Jubaland State",
