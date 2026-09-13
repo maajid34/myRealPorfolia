@@ -225,13 +225,14 @@ export const projects = [
   //   status: "Under active development and local testing",
   // },
   {
-    title: "Ministry of Fishery & Blue Economy - Jubaland State",
-    role: "Independent Web Development Consultant",
+    title: "Ministry of Energy & Water Resources of Jubaland",
     description:
-      "Designed and developed the ministry website to improve institutional visibility, public communication, and access to sector information.",
-      image:fishiries,
-    url: "https://mofisheriesbe-frontend.vercel.app/",
+      "Designed, developed, and maintained the ministry website and digital reporting dashboards.",
+    url: "https://moewr-jubalandstate.so/",
+    image: ministryImage,
+    alt: "Ministry of Energy and Water Resources website",
   },
+  
   {
     title: "GreenVolt Energy Solutions Co.",
     description:
@@ -306,14 +307,7 @@ export const projects = [
     url: "https://aayareeb.com/",
     image:ayareeb,
   },
-  {
-    title: "Ministry of Energy & Water Resources of Jubaland",
-    description:
-      "Designed, developed, and maintained the ministry website and digital reporting dashboards.",
-    url: "https://moewr-jubalandstate.so/",
-    image: ministryImage,
-    alt: "Ministry of Energy and Water Resources website",
-  },
+  
 ];
 
 export const systems = [
@@ -328,6 +322,14 @@ export const systems = [
     description:
       "Developing an integrated system for vessel operations, cargo handling, gate passes, access control, staff and visitor management, and operational reporting.",
     status: "Nearing completion",
+  },
+  {
+    title: "Ministry of Fishery & Blue Economy - Jubaland State",
+    role: "Independent Web Development Consultant",
+    description:
+      "Designed and developed the ministry website to improve institutional visibility, public communication, and access to sector information.",
+      image:fishiries,
+    url: "https://mofisheriesbe-frontend.vercel.app/",
   },
 ];
 
