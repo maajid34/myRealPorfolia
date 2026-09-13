@@ -4,6 +4,14 @@ import keystoneImage from "../assets/keystone.jpg";
 import ministryImage from "../assets/minstry.jpg";
 import profileImage from "../assets/profilw3.jpeg";
 import sundusImage from "../assets/sundus.jpg";
+import fishiries from "../assets/fishiries.png";
+import aqonmalconsultabt from "../assets/aqonmalconsultabt.png";
+import aqonmalconstruction from "../assets/aqonmalconstruction.png";
+import somwomen from "../assets/somwomen.png";
+import hopespring from "../assets/hopespring.png";
+import caccsom from "../assets/caccsom.png";
+import ayareeb from "../assets/ayareeb.png";
+
 
 export const profile = {
   displayName: "Eng Abdimajid",
@@ -209,18 +217,19 @@ export const experience = [
   },
 ];
 export const projects = [
-  {
-    title: "Ministry of Planning, Investment and International Cooperation - Jubaland State",
-    role: "Independent Digital Systems Consultant / Lead Developer",
-    description:
-      "Leading the frontend website, JAIMS, and Organization Registration and Registry System with workflows for projects, registrations, documents, reporting, and public services.",
-    status: "Under active development and local testing",
-  },
+  // {
+  //   title: "Ministry of Planning, Investment and International Cooperation - Jubaland State",
+  //   role: "Independent Digital Systems Consultant / Lead Developer",
+  //   description:
+  //     "Leading the frontend website, JAIMS, and Organization Registration and Registry System with workflows for projects, registrations, documents, reporting, and public services.",
+  //   status: "Under active development and local testing",
+  // },
   {
     title: "Ministry of Fishery & Blue Economy - Jubaland State",
     role: "Independent Web Development Consultant",
     description:
       "Designed and developed the ministry website to improve institutional visibility, public communication, and access to sector information.",
+      image:fishiries,
     url: "https://mofisheriesbe-frontend.vercel.app/",
   },
   {
@@ -232,10 +241,11 @@ export const projects = [
     alt: "GreenVolt Energy Solutions website",
   },
   {
-    title: "Advance Consultant for IT Solutions",
+    title: "AQOONMAAL CONSULTANT FOR TECHNOLOGY & IT SOLUTIONS",
     description:
       "Developed the ICT-services website and provided project-based hardware and software office solutions.",
-    url: "https://advance-consultant.site/",
+      image:aqonmalconsultabt,
+    url: "https://aqoonmaalconsultant.site/",
   },
   {
     title: "Keystone Consulting Firm",
@@ -250,6 +260,7 @@ export const projects = [
     description:
       "Developed a corporate website presenting construction, transportation, and company-profile information.",
     url: "https://aqoonmaal-company.vercel.app/",
+    image:aqonmalconstruction,
   },
   {
     title: "Sundus Limited Company",
@@ -272,24 +283,28 @@ export const projects = [
     description:
       "Developed an organizational website presenting peacebuilding, women and youth engagement activities, and programme information.",
     url: "https://somaliwomenyouthpeace.org/",
+    image:somwomen,
   },
   {
     title: "Hope Springs Network Somalia",
     description:
       "Developed a professional NGO website for humanitarian and community-development programmes.",
     url: "https://hopes-springs.org/",
+    image:hopespring,
   },
   {
     title: "Community Action for Climate Change (CACC)",
     description:
       "Designed and developed an organizational website for climate action, environmental programmes, and community engagement.",
     url: "https://caccsom.org/",
+    image:caccsom,
   },
   {
     title: "Aayareeb Governance & Research Consultants",
     description:
       "Developed a consulting website presenting governance, research, advisory, and capacity-development services.",
     url: "https://aayareeb.com/",
+    image:ayareeb,
   },
   {
     title: "Ministry of Energy & Water Resources of Jubaland",
