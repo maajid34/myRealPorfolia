@@ -2,7 +2,7 @@ import greenvoltImage from "../assets/greenviolt.png";
 import hayaatImage from "../assets/hayaat.jpg";
 import keystoneImage from "../assets/keystone.jpg";
 import ministryImage from "../assets/minstry.jpg";
-import profileImage from "../assets/profilw3.jpeg";
+import profileImage from "../assets/profilw3.png";
 import sundusImage from "../assets/sundus.jpg";
 import fishiries from "../assets/fishiries.png";
 import aqonmalconsultabt from "../assets/aqonmalconsultabt.png";
